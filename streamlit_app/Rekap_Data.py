@@ -10,7 +10,7 @@ st.set_page_config(
     page_icon=":school:",
 )
 
-st.logo("images/logo.png")
+st.logo("https://github.com/herubagush/rekap_data_mahasiswa/blob/main/streamlit_app/images/logo.png")
 
 st.title(
     "Rekapitulasi Data Mahasiswa Institut Teknologi Yogyakarta (ITY) Periode 2019-2023"
