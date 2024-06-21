@@ -9,7 +9,7 @@ st.set_page_config(
     page_icon=":school:",
 )
 
-st.logo("https://github.com/herubagush/rekap_data_mahasiswa/blob/main/streamlit_app/images/logo.png")
+st.logo("logo.png", link="https://github.com/herubagush/rekap_data_mahasiswa/blob/main/streamlit_app/images/")
 
 st.title("Data Sebaran Mahasiswa Institut Teknologi Yogyakarta (ITY) per Prodi")
 
