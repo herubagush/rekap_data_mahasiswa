@@ -24,7 +24,7 @@ data_select = data_select.fillna("")
 data = data_select.replace(r"^\s*$", "UNKNOWN", regex=True)
 
 # 1. Rekap Jumlah Mahasiswa per Prodi
-st.subheader("1. Jumlah Mahasiswa per Prodi")
+st.subheader("1. Jumlah Mahasiswa (Student Body) Periode 2019-2023 per Prodi")
 rekap1 = (
     data.groupby(by=["prodi"]).count()[["nama"]].rename(columns={"nama": "mahasiswa"})
 )
@@ -48,8 +48,8 @@ fig.update_layout(
 )
 st.plotly_chart(fig)
 
-# 2. Jumlah Mahasiswa Selama Kurun Waktu 2019-2023
-st.subheader("2. Jumlah Mahasiswa Selama Kurun Waktu 2019-2023")
+# 2. Jumlah Mahasiswa Baru Selama Kurun Waktu 2019-2023
+st.subheader("2. Jumlah Mahasiswa Baru Selama Kurun Waktu 2019-2023")
 rekap2 = (
     data.groupby(by=["angkatan"])
     .count()[["nama"]]
@@ -65,7 +65,7 @@ fig = px.line(
     template="plotly_white",
 )
 fig.update_layout(
-    title="Tren Jumlah Mahasiswa ITY Periode 2019-2023",
+    title="Tren Jumlah Mahasiswa Baru ITY Periode 2019-2023",
     title_x=0.3,
     title_y=0.95,
     xaxis_title="Tahun",
