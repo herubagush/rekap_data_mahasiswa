@@ -213,7 +213,7 @@ st.plotly_chart(fig)
 
 # 8. Jumlah Mahasiswa per Prodi pada Provinsi dengan Perolehan Total Mahasiswa Minimal 50 orang
 st.subheader(
-    "8. Jumlah Mahasiswa per Prodi pada Provinsi dengan Perolehan Total Mahasiswa Minimal orang"
+    "8. Jumlah Mahasiswa per Prodi pada Provinsi dengan Perolehan Total Mahasiswa Minimal 50 orang"
 )
 rekap7 = pd.DataFrame()
 for x in rekap6["provinsi"]:
