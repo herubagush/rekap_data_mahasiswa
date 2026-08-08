@@ -211,14 +211,13 @@ fig.update_xaxes(title="Jumlah Mahasiswa")
 fig.update_yaxes(title=None)
 st.plotly_chart(fig)
 
-# 8. Jumlah Mahasiswa per Prodi pada Provinsi dengan Perolehan Total Mahasiswa Lebih Dari 50 orang
+# 8. Jumlah Mahasiswa per Prodi pada Provinsi dengan Perolehan Total Mahasiswa Minimal 50 orang
 st.subheader(
-    "8. Jumlah Mahasiswa per Prodi pada Provinsi dengan Perolehan Total Mahasiswa Lebih Dari 50 orang"
+    "8. Jumlah Mahasiswa per Prodi pada Provinsi dengan Perolehan Total Mahasiswa Minimal orang"
 )
 rekap7 = pd.DataFrame()
-rekap7.fillna(0)
 for x in rekap6["provinsi"]:
-    rekap7 = rekap7._append(rekap5.loc[rekap5["provinsi"] == x], ignore_index=True)
+    rekap7 = pd.concat([rekap7, rekap5.loc[rekap5["provinsi"] == x]], ignore_index=True)
 fig = px.bar(
     rekap7,
     x="mahasiswa",
@@ -248,9 +247,8 @@ st.subheader(
     "9. Detail Kabupaten pada Provinsi dengan Perolehan Total Mahasiswa Minimal 50 orang"
 )
 rekap8 = pd.DataFrame()
-rekap8.fillna(0)
 for x in rekap6["provinsi"]:
-    rekap8 = rekap8._append(data.loc[data["provinsi"] == x], ignore_index=True)
+    rekap8 = pd.concat([rekap8,(data.loc[data["provinsi"] == x]], ignore_index=True)
 rekap8 = (
     rekap8.groupby(by=["provinsi", "prodi", "kabupaten"])
     .count()[["nama"]]
