@@ -248,7 +248,7 @@ st.subheader(
 )
 rekap8 = pd.DataFrame()
 for x in rekap6["provinsi"]:
-    rekap8 = pd.concat([rekap8,(data.loc[data["provinsi"] == x]], ignore_index=True)
+    rekap8 = pd.concat([rekap8, data.loc[data["provinsi"] == x]], ignore_index=True)
 rekap8 = (
     rekap8.groupby(by=["provinsi", "prodi", "kabupaten"])
     .count()[["nama"]]
